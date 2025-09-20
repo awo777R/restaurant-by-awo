@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Reservas - Restaurante</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🍽️ Restaurante El Buen Bocado</h1>
+  <p>Gestión de reservas y mesas</p>
+</header>
+
+<div class="container">
+  <!-- Panel de nueva reserva -->
+  <div class="panel">
+    <h2>Nueva Reserva</h2>
+    <form id="formReserva" onsubmit="return false;">
+      <label>Nombre del cliente</label>
+      <input type="text" id="nombre" required>
+
+      <label>Personas</label>
+      <input type="number" id="personas" min="1" max="12" value="2" required>
+
+      <label>Mesa</label>
+      <select id="mesaSelect"></select>
+
+      <label>Fecha</label>
+      <input type="date" id="fecha" required onchange="renderMesas()">
+
+      <label>Hora</label>
+      <input type="time" id="hora" required onchange="renderMesas()">
+
+      <button class="btn-primary" onclick="crearReserva()">Reservar</button>
+    </form>
+  </div>
+
+  <!-- Estado de mesas y reservas -->
+  <div class="mesas">
+    <h2>Estado de las Mesas</h2>
+    <div class="grid-mesas" id="gridMesas"></div>
+
+    <h2>Registro de Reservas</h2>
+    <div class="reservas">
+      <ul id="listaReservas"></ul>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

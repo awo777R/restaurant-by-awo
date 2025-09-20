@@ -1,0 +1,95 @@
+:root{
+  --bg: #444;
+  --card: #fff;
+  --accent: #ce0000;
+  --accent-dark: #a04000;
+  --success: #27ae60;
+  --danger: #b80000;
+}
+
+body{
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: #2c3e50;
+}
+
+header{
+  background: var(--accent);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1{ margin: 0; }
+
+.container{
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.panel, .mesas{
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+h2{ margin-top: 0; color: var(--accent); }
+
+label{ display:block; margin-top: 10px; font-weight: bold; }
+input, select{
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+button{
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-primary{ background: var(--accent); color: white; }
+.btn-primary:hover{ background: var(--accent-dark); }
+.btn-danger{ background: var(--danger); color: white; }
+
+/* Grid mesas */
+.grid-mesas{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.mesa{
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.disponible{ background: #ecf0f1; border: 2px solid var(--success); }
+.reservada{ background: #f39c12; color: white; }
+.mesa:hover{ transform: scale(1.05); }
+
+/* Lista de reservas */
+ul{ list-style: none; padding: 0; }
+li{
+  background: #f4f6f7;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+.acciones button{ margin-right: 6px; }
+
+@media(max-width: 768px){
+  .container{ grid-template-columns: 1fr; }
+}
